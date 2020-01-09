@@ -21,4 +21,4 @@ $ echo 1 > /dev/myled0
 $ echo 0 > /dev/myled0
 ```
 # YOUTUBE
-https://youtu.be/dI_ELTqmEWQ
+https://youtu.be/0BtWGSeYvQA
