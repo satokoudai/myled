@@ -1,3 +1,4 @@
+// ヘッダファイル読み込み
 #include <linux/module.h>
 #include <linux/fs.h>
 #include <linux/cdev.h>
@@ -6,6 +7,7 @@
 #include <linux/io.h>
 #include <linux/delay.h>
 
+// ライセンス表示
 MODULE_AUTHOR("Kodai Sato");
 MODULE_DESCRIPTION("driver for LED control");
 MODULE_LICENSE("GPL");
@@ -13,7 +15,7 @@ MODULE_VERSION("0.0.1");
 
 static dev_t dev;
 static struct cdev cdv;
-static struct class *cls = NULL;
+static struct class *cls = NULL; 
 static volatile u32 *gpio_base = NULL;
 
 static ssize_t sushi_read(struct file* filp, char* buf, size_t count, loff_t* pos)
@@ -35,88 +37,88 @@ static ssize_t led_write(struct file* filp, const char* buf, size_t count, loff_
         return -EFAULT;
 
     if(c == '0')
-        {
-                gpio_base[10] = 1 << 25;
-                msleep(300);
-                gpio_base[7] = 1 << 25;
-                msleep(300);
-                gpio_base[10] = 1 << 25;
-                msleep(300);
-                gpio_base[7] = 1 << 25;
-                msleep(300);
-                gpio_base[10] = 1 << 25;
-                msleep(250);
-                gpio_base[7] = 1 << 25;
-                msleep(250);
-                gpio_base[10] = 1 << 25;
-                msleep(250);
-                gpio_base[7] = 1 << 25;
-                msleep(250);
-                gpio_base[10] = 1 << 25;
-                msleep(200);
-                gpio_base[7] = 1 << 25;
-                msleep(200);
-                gpio_base[10] = 1 << 25;
-                msleep(200);
-                gpio_base[7] = 1 << 25;
-                msleep(200);
-                gpio_base[10] = 1 << 25;
-                msleep(150);
-                gpio_base[7] = 1 << 25;
-                msleep(150);
-                gpio_base[10] = 1 << 25;
-                msleep(150);
-                gpio_base[7] = 1 << 25;
-                msleep(150);
-                gpio_base[10] = 1 << 25;
-                msleep(100);
-                gpio_base[7] = 1 << 25;
-                msleep(100);
-                gpio_base[10] = 1 << 25;
-                msleep(100);
-                gpio_base[7] = 1 << 25;
-                msleep(100);
-                gpio_base[10] = 1 << 25;
-                msleep(50);
-                gpio_base[7] = 1 << 25;
-                msleep(50);
-                gpio_base[10] = 1 << 25;
-                msleep(50);
-                gpio_base[7] = 1 << 25;
-                msleep(50);
-                gpio_base[10] = 1 << 25;
-                msleep(25);
-                gpio_base[7] = 1 << 25;
-                msleep(25);
-                gpio_base[10] = 1 << 25;
-                msleep(25);
-                gpio_base[7] = 1 << 25;
-                msleep(100);
-                gpio_base[10] = 1 << 25;
-                msleep(100);
-                gpio_base[7] = 1 << 25;
-                msleep(100);
-                gpio_base[10] = 1 << 25;
-                msleep(100);
-                gpio_base[7] = 1 << 25;
-                msleep(100);
-                gpio_base[10] = 1 << 25;
-                msleep(150);
-                gpio_base[7] = 1 << 25;
-                msleep(150);
-                gpio_base[10] = 1 << 25;
-                msleep(150);
-                gpio_base[7] = 1 << 25;
-                msleep(150);
-                gpio_base[10] = 1 << 25;
-                msleep(150);
-                gpio_base[7] = 1 << 25;
-                msleep(200);
-                gpio_base[10] = 1 << 25;
-                msleep(300);
-                gpio_base[7] = 1 << 25;
-                msleep(300);
-
+     	{
+       		gpio_base[10] = 1 << 25;
+       		msleep(300);
+       		gpio_base[7] = 1 << 25;
+       		msleep(300);
+       		gpio_base[10] = 1 << 25;
+       		msleep(300);
+       		gpio_base[7] = 1 << 25;
+       		msleep(300);
+       		gpio_base[10] = 1 << 25;
+       		msleep(250);
+       		gpio_base[7] = 1 << 25;
+       		msleep(250);
+       		gpio_base[10] = 1 << 25;
+       		msleep(250);
+       		gpio_base[7] = 1 << 25;
+       		msleep(250);
+       		gpio_base[10] = 1 << 25;
+       		msleep(200);
+       		gpio_base[7] = 1 << 25;
+       		msleep(200);
+       		gpio_base[10] = 1 << 25;
+       		msleep(200);
+       		gpio_base[7] = 1 << 25;
+       		msleep(200);
+       		gpio_base[10] = 1 << 25;
+       		msleep(150);
+       		gpio_base[7] = 1 << 25;
+       		msleep(150);
+       		gpio_base[10] = 1 << 25;
+       		msleep(150);
+       		gpio_base[7] = 1 << 25;
+       		msleep(150);
+       		gpio_base[10] = 1 << 25;
+       		msleep(100);
+       		gpio_base[7] = 1 << 25;
+       		msleep(100);
+       		gpio_base[10] = 1 << 25;
+       		msleep(100);
+       		gpio_base[7] = 1 << 25;
+       		msleep(100);
+       		gpio_base[10] = 1 << 25;
+       		msleep(50);
+       		gpio_base[7] = 1 << 25;
+       		msleep(50);
+       		gpio_base[10] = 1 << 25;
+       		msleep(50);
+       		gpio_base[7] = 1 << 25;
+       		msleep(50);
+       		gpio_base[10] = 1 << 25;
+       		msleep(25);
+       		gpio_base[7] = 1 << 25;
+       		msleep(25);
+       		gpio_base[10] = 1 << 25;
+       		msleep(25);
+       		gpio_base[7] = 1 << 25;
+       		msleep(100);
+       		gpio_base[10] = 1 << 25;
+       		msleep(100);
+       		gpio_base[7] = 1 << 25;
+       		msleep(100);
+       		gpio_base[10] = 1 << 25;
+       		msleep(100);
+       		gpio_base[7] = 1 << 25;
+       		msleep(100);
+       		gpio_base[10] = 1 << 25;
+       		msleep(150);
+       		gpio_base[7] = 1 << 25;
+       		msleep(150);
+       		gpio_base[10] = 1 << 25;
+       		msleep(150);
+       		gpio_base[7] = 1 << 25;
+       		msleep(150);
+       		gpio_base[10] = 1 << 25;
+       		msleep(150);
+       		gpio_base[7] = 1 << 25;
+       		msleep(200);
+       		gpio_base[10] = 1 << 25;
+       		msleep(300);
+       		gpio_base[7] = 1 << 25;
+       		msleep(300);
+		
         }
     else if(c == '1')
         gpio_base[7] = 1 << 25;
@@ -132,7 +134,7 @@ static struct file_operations led_fops = {
 static int __init init_mod(void)
 {
     int retval;
-
+    
     const u32 led = 25;//pin番号を変えたい場合ここを変える
     const u32 index = led/10;//GPFSEL2
     const u32 shift = (led%10)*3;//15bit
@@ -148,7 +150,7 @@ static int __init init_mod(void)
         return retval;
     }
     printk(KERN_INFO "%s is loaded. major:%d\n",__FILE__,MAJOR(dev));
-
+    
     cdev_init(&cdv, &led_fops);
     retval = cdev_add(&cdv, dev, 1);
     if(retval < 0){
@@ -161,7 +163,7 @@ static int __init init_mod(void)
         printk(KERN_ERR "class_create failed.");
         return PTR_ERR(cls);
     }
-
+    
     device_create(cls, NULL, dev, NULL, "myled%d", MINOR(dev));
 
     return 0;
@@ -178,3 +180,4 @@ static void __exit cleanup_mod(void)
 
 module_init(init_mod); //マクロで関数登録
 module_exit(cleanup_mod); //同上
+
