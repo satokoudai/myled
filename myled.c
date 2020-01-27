@@ -1,4 +1,3 @@
-// ヘッダファイル読み込み
 #include <linux/module.h>
 #include <linux/fs.h>
 #include <linux/cdev.h>
@@ -7,7 +6,6 @@
 #include <linux/io.h>
 #include <linux/delay.h>
 
-// ライセンス表示
 MODULE_AUTHOR("Kodai Sato");
 MODULE_DESCRIPTION("driver for LED control");
 MODULE_LICENSE("GPL");
